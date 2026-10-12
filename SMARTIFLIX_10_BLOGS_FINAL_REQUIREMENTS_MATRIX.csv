@@ -1,0 +1,31 @@
+article_slug,requirement,status,evidence
+how-to-install-iptv-on-firestick-2026,strict_words_min_2500,PASS,2580 strict editorial words
+how-to-install-iptv-on-firestick-2026,structure_faq_links_schema,PASS,19 H2; table; 5 FAQs; 2 contextual links; required JSON-LD
+how-to-install-iptv-on-firestick-2026,image_specification,EXCEPTION,Hero plus 2 section WebP images; literal one-per-H2 unmet
+best-iptv-players-smart-tv-2026,strict_words_min_2500,PASS,2619 strict editorial words
+best-iptv-players-smart-tv-2026,structure_faq_links_schema,PASS,21 H2; table; 5 FAQs; 2 contextual links; required JSON-LD
+best-iptv-players-smart-tv-2026,image_specification,EXCEPTION,Hero plus 2 section WebP images; literal one-per-H2 unmet
+xtream-codes-vs-m3u,strict_words_min_2500,PASS,2573 strict editorial words
+xtream-codes-vs-m3u,structure_faq_links_schema,PASS,23 H2; table; 5 FAQs; 2 contextual links; required JSON-LD
+xtream-codes-vs-m3u,image_specification,EXCEPTION,Hero plus 2 section WebP images; literal one-per-H2 unmet
+iptv-buffering-fix-2026,strict_words_min_2500,PASS,2534 strict editorial words
+iptv-buffering-fix-2026,structure_faq_links_schema,PASS,23 H2; table; 5 FAQs; 2 contextual links; required JSON-LD
+iptv-buffering-fix-2026,image_specification,EXCEPTION,Hero plus 2 section WebP images; literal one-per-H2 unmet
+iptv-on-samsung-lg-smart-tv-2026,strict_words_min_2500,PASS,2556 strict editorial words
+iptv-on-samsung-lg-smart-tv-2026,structure_faq_links_schema,PASS,23 H2; table; 5 FAQs; 2 contextual links; required JSON-LD
+iptv-on-samsung-lg-smart-tv-2026,image_specification,EXCEPTION,Hero plus 2 section WebP images; literal one-per-H2 unmet
+best-iptv-player-for-firestick-2026,strict_words_min_2500,PASS,2515 strict editorial words
+best-iptv-player-for-firestick-2026,structure_faq_links_schema,PASS,25 H2; table; 5 FAQs; 2 contextual links; required JSON-LD
+best-iptv-player-for-firestick-2026,image_specification,EXCEPTION,Hero plus 2 section WebP images; literal one-per-H2 unmet
+iptv-epg-not-working-guide,strict_words_min_2500,PASS,2519 strict editorial words
+iptv-epg-not-working-guide,structure_faq_links_schema,PASS,25 H2; table; 5 FAQs; 2 contextual links; required JSON-LD
+iptv-epg-not-working-guide,image_specification,EXCEPTION,Hero plus 2 section WebP images; literal one-per-H2 unmet
+iptv-on-apple-tv-2026,strict_words_min_2500,PASS,2516 strict editorial words
+iptv-on-apple-tv-2026,structure_faq_links_schema,PASS,26 H2; table; 5 FAQs; 2 contextual links; required JSON-LD
+iptv-on-apple-tv-2026,image_specification,EXCEPTION,Hero plus 2 section WebP images; literal one-per-H2 unmet
+internet-speed-for-iptv,strict_words_min_2500,PASS,2540 strict editorial words
+internet-speed-for-iptv,structure_faq_links_schema,PASS,26 H2; table; 5 FAQs; 2 contextual links; required JSON-LD
+internet-speed-for-iptv,image_specification,EXCEPTION,Hero plus 2 section WebP images; literal one-per-H2 unmet
+iptv-not-working-common-problems,strict_words_min_2500,PASS,2543 strict editorial words
+iptv-not-working-common-problems,structure_faq_links_schema,PASS,27 H2; table; 5 FAQs; 2 contextual links; required JSON-LD
+iptv-not-working-common-problems,image_specification,EXCEPTION,Hero plus 2 section WebP images; literal one-per-H2 unmet
