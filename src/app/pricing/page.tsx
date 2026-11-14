@@ -3,13 +3,13 @@ import Link from "next/link";
 import { PricingSelector } from "@/components/PricingSelector";
 import { ButtonLink } from "@/components/ButtonLink";
 import { whatsappIntentUrl } from "@/lib/whatsapp";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Smartiflix Pricing and Subscription Plans",
   description: "See Smartiflix pricing for 1, 3, 6, and 12 month plans with one to five device options.",
-  alternates: { canonical: "/pricing" },
-  openGraph: { title: "Smartiflix Pricing and Subscription Plans", description: "Exact Smartiflix plan pricing by duration and device count." },
-};
+  path: "/pricing",
+});
 
 export default function PricingPage() {
   return (

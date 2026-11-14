@@ -4,7 +4,7 @@ import { ButtonLink } from "@/components/ButtonLink";
 import { whatsappIntentUrl } from "@/lib/whatsapp";
 
 const groups = {
-  "Smartiflix Explore": [["Pricing", "/pricing"], ["Blog", "/blog"], ["FAQ", "/faq"], ["Free Trial", whatsappIntentUrl("trial")]],
+  "Smartiflix Explore": [["Pricing", "/pricing"], ["Blog", "/blog"], ["FAQ", "/faq"], ["Support", "/support"], ["Free Trial", whatsappIntentUrl("trial")]],
   "Smartiflix Company": [["Reseller", "/reseller"]],
   "Smartiflix Information": [["Privacy", "/privacy"], ["Terms", "/terms"], ["Refund", "/refund"], ["Disclaimer", "/disclaimer"]],
 };

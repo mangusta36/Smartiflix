@@ -17,15 +17,33 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  const org = { "@context": "https://schema.org", "@type": "Organization", name: "Smartiflix", url: absoluteUrl("/") };
-  const website = { "@context": "https://schema.org", "@type": "WebSite", name: "Smartiflix", url: absoluteUrl("/") };
+  const organizationId = absoluteUrl("/#organization");
+  const org = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": organizationId,
+    name: "Smartiflix",
+    url: absoluteUrl("/"),
+    description: site.description,
+  };
+  const website = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": absoluteUrl("/#website"),
+    name: "Smartiflix",
+    url: absoluteUrl("/"),
+    description: site.description,
+    inLanguage: "en",
+    publisher: { "@id": organizationId },
+  };
   return (
     <html lang="en">
       <body className={inter.variable}>
         <JsonLd data={org} />
         <JsonLd data={website} />
+        <a className="skip-link" href="#main-content">Skip to main content</a>
         <Header />
-        <main>{children}</main>
+        <main id="main-content">{children}</main>
         <Footer />
       </body>
     </html>

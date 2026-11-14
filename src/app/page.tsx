@@ -6,18 +6,13 @@ import { PricingSelector } from "@/components/PricingSelector";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { allFaqItems } from "@/data/faq";
 import { whatsappIntentUrl } from "@/lib/whatsapp";
-import { absoluteUrl } from "@/lib/site";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Smartiflix | Official IPTV Plans and Device Guidance",
+export const metadata: Metadata = createPageMetadata({
+  title: "Smartiflix | IPTV Plans and Device Guidance",
   description: "Smartiflix helps viewers compare IPTV subscription plans, choose device counts, understand compatible players, and contact support through WhatsApp.",
-  alternates: { canonical: "/" },
-  openGraph: {
-    title: "Smartiflix | Official IPTV Plans and Device Guidance",
-    description: "Plan, device, player, setup, and support information for Smartiflix IPTV.",
-    url: absoluteUrl("/"),
-  },
-};
+  path: "/",
+});
 
 const watchWays = [
   ["01", "Smart TVs", "Use Smartiflix on compatible Samsung, LG, Android TV, or Google TV environments when a suitable player is available."],
@@ -47,17 +42,10 @@ const loginNotes = [
 ];
 
 const reasons = [
-  ["Smartiflix device flexibility", "The site is organized around the screens people already own instead of assuming one universal device setup."],
-  ["Smartiflix setup guidance", "Customers are encouraged to identify the player, login format, and connection conditions before asking for help."],
-  ["Smartiflix plan clarity", "The pricing selector exposes the device count and plan length without fake sale timers or invented discounts."],
-  ["Smartiflix support direction", "Trial, support, reseller, and order paths use centralized WhatsApp messages owned by Smartiflix."],
-];
-
-const setupPaths = [
-  ["Smartiflix for a Firestick household", "A Firestick setup usually starts with player availability, storage, Wi-Fi strength, and careful login entry."],
-  ["Smartiflix for a Smart TV household", "Smart TV setup depends on model, app-store access, operating system version, and supported player choices."],
-  ["Smartiflix for a multi-device home", "Choose the device count by listing every screen that needs access before selecting the plan duration."],
-  ["Smartiflix for mobile viewing", "Phones and tablets work best as secondary screens when the player and connection are stable."],
+  ["Device flexibility", "The site is organized around the screens people already own instead of assuming one universal device setup."],
+  ["Setup guidance", "Customers are encouraged to identify the player, login format, and connection conditions before asking for help."],
+  ["Plan clarity", "The pricing selector exposes the device count and plan length without fake sale timers or invented discounts."],
+  ["Support direction", "Trial, support, reseller, and order paths use the established Smartiflix WhatsApp contact flow."],
 ];
 
 export default function Home() {
@@ -66,10 +54,10 @@ export default function Home() {
       <section className="relative min-h-[706px] overflow-hidden bg-[#081412]">
         <Image
           src="/images/smartiflix-living-room.webp"
-          alt="Modern home television viewing setup for Smartiflix"
+          alt=""
+          data-decorative="true"
           fill
           preload
-          loading="eager"
           sizes="100vw"
           className="object-cover object-[58%_50%]"
         />
@@ -119,13 +107,13 @@ export default function Home() {
           <div className="grid gap-8 lg:grid-cols-[.8fr_1.2fr] lg:items-end">
             <div>
               <p className="eyebrow">The experience</p>
-              <h2 className="display mt-4 max-w-[540px] text-4xl leading-tight text-[#F6EFE2] md:text-6xl">Smartiflix for live TV, films and home viewing.</h2>
+              <h2 className="display mt-4 max-w-[540px] text-4xl leading-tight text-[#F6EFE2] md:text-6xl">Plans, devices and setup in one place.</h2>
             </div>
-            <p className="max-w-xl leading-7 text-[#9CAEA6]">Make room for everyday viewing without a confusing plan page. Smartiflix brings pricing, device expectations, setup details, and support paths into one straightforward place.</p>
+            <p className="max-w-xl leading-7 text-[#9CAEA6]">Compare subscription lengths and device counts, check compatibility before ordering, and use the appropriate setup or support path when a screen needs attention.</p>
           </div>
           <div className="mt-10 grid gap-4 lg:grid-cols-[1.35fr_.65fr]">
-            <Image src="/images/smartiflix-living-room.webp" alt="Television and living room entertainment scene" width={1200} height={900} className="aspect-[16/7] h-full w-full object-cover brightness-[.68] contrast-110" />
-            <Image src="/images/smartiflix-remote.webp" alt="Remote control for home television viewing" width={1100} height={900} className="aspect-[4/3] h-full w-full object-cover brightness-[.72] contrast-110" />
+            <Image src="/images/smartiflix-living-room.webp" alt="Sunlit living room with a television on a low media console" width={1200} height={900} sizes="(min-width: 1024px) 840px, calc(100vw - 36px)" className="aspect-[16/7] h-full w-full object-cover brightness-[.68] contrast-110" />
+            <Image src="/images/smartiflix-remote.webp" alt="Person holding a black television remote control" width={1100} height={900} sizes="(min-width: 1024px) 400px, calc(100vw - 36px)" className="aspect-[4/3] h-full w-full object-cover brightness-[.72] contrast-110" />
           </div>
         </div>
       </section>
@@ -140,7 +128,7 @@ export default function Home() {
             <p>Smartiflix is a subscription-focused entertainment service for viewers who want a clearer way to choose a plan, understand device options, and get started with compatible IPTV player applications. The service is presented around practical choices: plan length, device count, setup format, and support direction.</p>
             <p>Internet-based viewing can vary by device, player, network quality, and login details. That is why Smartiflix does not treat setup as a single universal button. Customers can compare the plan matrix, review compatible device categories, and ask support questions with the right information ready.</p>
             <p>For most homes, the best starting point is the screen used most often. A single living-room TV may only need one device on the plan. A household that expects phones, tablets, a second room device, or a computer to be active should choose the device count before ordering.</p>
-            <p>The brand may appear in search as smartiflix iptv or smarti flix, but the visible company name remains Smartiflix. This page owns the broad brand intent while pricing, devices, FAQ, reseller, and blog pages keep their own roles.</p>
+            <p>This page explains the service at a broad level. Pricing owns plan and purchase information, Devices covers compatibility, Support handles account-specific help, FAQ answers recurring questions, and the Blog provides educational setup and troubleshooting guides.</p>
           </div>
         </div>
       </section>
@@ -244,72 +232,16 @@ export default function Home() {
           <div>
             <p className="eyebrow">Setup help</p>
             <h2 className="display mt-4 max-w-[500px] text-4xl leading-tight text-[#F6EFE2] md:text-5xl">Choose the right Smartiflix setup direction.</h2>
-            <p className="mt-5 leading-7 text-[#9CAEA6]">Smartiflix does not publish fake setup articles while the blog is empty. Use the device guide and FAQ for orientation, and contact support with your device model, compatible player, login format, and connection details.</p>
+            <p className="mt-5 leading-7 text-[#9CAEA6]">Use the Smartiflix setup and troubleshooting guides for detailed device, player, login-format, EPG, network, and playback help. For account-specific assistance, contact support with your device model, compatible player, login format, and connection details.</p>
           </div>
           <div className="divide-y divide-[#314942] border-y border-[#314942]">
             <Link href="/devices" className="flex justify-between gap-4 py-5 font-semibold text-[#F6EFE2] hover:text-[#D6A756]">Smartiflix device guide <span>↗</span></Link>
+            <Link href="/blog" className="flex justify-between gap-4 py-5 font-semibold text-[#F6EFE2] hover:text-[#D6A756]">Setup and troubleshooting guides <span>↗</span></Link>
             <Link href="/faq" className="flex justify-between gap-4 py-5 font-semibold text-[#F6EFE2] hover:text-[#D6A756]">Setup and playback FAQ <span>↗</span></Link>
             <Link href={whatsappIntentUrl("support")} className="flex justify-between gap-4 py-5 font-semibold text-[#F6EFE2] hover:text-[#D6A756]">WhatsApp support <span>↗</span></Link>
           </div>
           <div className="lg:col-start-2">
             <p className="text-sm leading-7 text-[#9CAEA6]">Before setup, write down the device model, the player name, whether the device is using Wi-Fi or Ethernet, and the exact message shown if something fails. Smartiflix support can then focus on the practical issue instead of starting from a blank description.</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-[#081412] py-20">
-        <div className="container grid gap-10 lg:grid-cols-[.8fr_1.2fr]">
-          <div>
-            <p className="eyebrow">Viewing preparation</p>
-            <h2 className="display mt-4 max-w-[520px] text-4xl leading-tight text-[#F6EFE2] md:text-5xl">Prepare your Smartiflix setup before you sit down to watch.</h2>
-            <p className="mt-5 leading-7 text-[#9CAEA6]">Because Smartiflix has no published blog articles yet, this homepage keeps preparation advice on the page instead of sending visitors to fake guides.</p>
-          </div>
-          <div className="divide-y divide-[#314942] border-y border-[#314942]">
-            <div className="grid gap-3 py-5 md:grid-cols-[220px_1fr]">
-              <h3 className="font-semibold text-[#F6EFE2]">Confirm the main screen</h3>
-              <p className="text-sm leading-6 text-[#9CAEA6]">Know whether the primary screen is a Firestick, Fire TV, smart TV, Android TV, Google TV, phone, tablet, or computer before choosing a plan.</p>
-            </div>
-            <div className="grid gap-3 py-5 md:grid-cols-[220px_1fr]">
-              <h3 className="font-semibold text-[#F6EFE2]">Test the connection</h3>
-              <p className="text-sm leading-6 text-[#9CAEA6]">Streaming is easier to troubleshoot when the device has already been tested on the same Wi-Fi or Ethernet connection used for normal viewing.</p>
-            </div>
-            <div className="grid gap-3 py-5 md:grid-cols-[220px_1fr]">
-              <h3 className="font-semibold text-[#F6EFE2]">Keep details private</h3>
-              <p className="text-sm leading-6 text-[#9CAEA6]">Access details should be entered only where they belong. If you need help, describe the issue without exposing private login information publicly.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-[#0B1916] py-20">
-        <div className="container grid gap-10 lg:grid-cols-[.8fr_1.2fr]">
-          <div>
-            <p className="eyebrow">Streaming quality</p>
-            <h2 className="display mt-4 max-w-[520px] text-4xl leading-tight text-[#F6EFE2] md:text-5xl">Improve Smartiflix streaming quality before you press play.</h2>
-          </div>
-          <div className="space-y-5 leading-8 text-[#AFC0B8]">
-            <p>Good IPTV performance depends on more than the subscription. Internet stability, Wi-Fi signal, router placement, device performance, player version, household bandwidth, and available device storage can all affect playback quality.</p>
-            <p>If possible, use a wired Ethernet connection or place the streaming device close to the router. Close unused apps, keep the player updated, and test the main screen before an important viewing session. Smartiflix avoids promising zero buffering, perfect resolution, or flawless playback because local conditions matter.</p>
-            <p>When playback problems appear, it helps to isolate one variable at a time. Check another app on the same device, restart the player, confirm the access details, and note whether the issue happens on every screen or only one device. Those details make the Smartiflix support conversation more useful.</p>
-            <ButtonLink href="/faq" variant="plain" className="inline-block">Troubleshooting guide</ButtonLink>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-[#081412] py-20">
-        <div className="container">
-          <div className="mb-10 max-w-[760px]">
-            <p className="eyebrow">Setup paths</p>
-            <h2 className="display mt-4 text-4xl leading-tight text-[#F6EFE2] md:text-5xl">Find the Smartiflix setup path for your home.</h2>
-            <p className="mt-5 leading-7 text-[#9CAEA6]">Use these examples to decide which setup question to ask first. They are not separate products; they are practical ways to approach setup. If you are unsure which category fits, start with the device that will be used most often and confirm whether a compatible player is already installed.</p>
-          </div>
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-            {setupPaths.map(([title, text]) => (
-              <div key={title} className="border border-[#233B35] bg-[#10231F] p-5">
-                <h3 className="font-semibold text-[#F6EFE2]">{title}</h3>
-                <p className="mt-4 text-sm leading-6 text-[#9CAEA6]">{text}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>

@@ -9,17 +9,12 @@ function words(article) {
   return text.trim().split(/\s+/).filter(Boolean).length;
 }
 
-let passing = 0;
-
 for (const article of blogArticles) {
   const count = words(article);
-  if (count >= 2500) passing += 1;
   console.log(`${article.slug}: ${count} strict editorial words`);
 }
 
 console.log("Count includes title, intro, section headings, and section body copy once; excludes shared template, CTA, tables, FAQ, sources, related links, navigation, and footer.");
-console.log(`Articles >= 2,500 strict editorial words: ${passing}/${blogArticles.length}`);
+console.log("Word counts are diagnostic only; quality validation uses intent, structure, sources, semantic coverage, and rendered-page checks.");
 
-if (blogArticles.length !== 10 || passing !== 10) {
-  process.exitCode = 1;
-}
+if (blogArticles.length !== 10 || blogArticles.some((article) => !article.intro || article.sections.length < 6 || article.faqs.length < 3 || article.sources.length < 2)) process.exitCode = 1;

@@ -14,14 +14,17 @@
     "qa:links": "tsx scripts/check-links.ts",
     "qa:blog:words": "tsx scripts/verify-blog-word-counts.mjs",
     "qa:blog:forensics": "tsx scripts/verify-blog-forensics.mjs",
-    "qa:blog:duplicates": "tsx scripts/verify-blog-duplicates.mjs"
+    "qa:blog:duplicates": "tsx scripts/verify-blog-duplicates.mjs",
+    "verify:blog-seo": "tsx scripts/verify-blog-seo.mjs",
+    "verify:image-alt": "tsx scripts/verify-image-alt.mjs",
+    "verify:production": "tsx scripts/verify-site-production.mjs"
   },
   "keywords": [],
   "author": "",
   "license": "UNLICENSED",
   "type": "module",
   "dependencies": {
-    "next": "^16.3.8",
+    "next": "^16.4.6",
     "react": "^19.3.0",
     "react-dom": "^19.3.0"
   },
@@ -31,7 +34,7 @@
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "eslint": "^9.39.5",
-    "eslint-config-next": "^16.3.8",
+    "eslint-config-next": "^16.4.6",
     "playwright": "^1.63.0",
     "sharp": "^0.35.5",
     "tailwindcss": "^4.3.3",

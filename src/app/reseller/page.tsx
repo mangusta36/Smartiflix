@@ -2,16 +2,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ButtonLink } from "@/components/ButtonLink";
 import { whatsappIntentUrl } from "@/lib/whatsapp";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Smartiflix Reseller Inquiries",
   description: "Contact Smartiflix about reseller inquiries. Specific reseller terms are discussed directly through WhatsApp.",
-  alternates: { canonical: "/reseller" },
-};
+  path: "/reseller",
+});
 
 export default function ResellerPage() {
   return (
-    <section className="section">
+    <section className="section bg-[#F6EFE2] text-[#081412]">
       <div className="container grid gap-10 lg:grid-cols-[.8fr_1.2fr]">
         <div><p className="text-sm text-[#5f6761]"><Link href="/">Home</Link> / Reseller</p><h1 className="mt-6 text-4xl font-semibold md:text-5xl">Smartiflix reseller inquiries</h1><p className="mt-5 text-lg leading-8 text-[#5f6761]">Use this page to contact Smartiflix about reseller interest. Published reseller pricing, margins, territories, credits, and earnings claims are intentionally not listed because those details have not been supplied for public display.</p><ButtonLink href={whatsappIntentUrl("reseller")} className="mt-8">Become a Reseller</ButtonLink></div>
         <div className="rounded-lg border border-[#ded7cb] bg-[#fffdf8] p-6"><h2 className="text-2xl font-semibold">Helpful details to include</h2><ul className="mt-4 space-y-3 leading-7 text-[#5f6761]"><li>Your reseller inquiry context.</li><li>The market or customer type you expect to serve.</li><li>Any operational questions you need answered before proceeding.</li><li>Your preferred follow-up path through WhatsApp.</li></ul></div>

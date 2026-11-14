@@ -1,8 +1,12 @@
 import { readFileSync, readdirSync, statSync } from "node:fs";
 import { join } from "node:path";
+import { blogArticles } from "../src/data/blog";
 
 const root = join(process.cwd(), "src");
-const publicRoutes = new Set(["/", "/pricing", "/devices", "/faq", "/blog", "/reseller", "/privacy", "/terms", "/refund", "/disclaimer"]);
+const publicRoutes = new Set([
+  "/", "/pricing", "/devices", "/faq", "/blog", "/support", "/reseller", "/privacy", "/terms", "/refund", "/disclaimer",
+  ...blogArticles.map((article) => `/blog/${article.slug}`),
+]);
 const files: string[] = [];
 
 function walk(dir: string) {
