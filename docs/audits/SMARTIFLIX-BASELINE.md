@@ -1,7 +1,7 @@
 # Smartiflix pre-remediation baseline
 
-Audit date: 2026-11-12  
-Baseline commit: `52ddc19` (`Initial Smartiflix website release`)  
+Audit date: 2026-11-12
+Baseline commit: `52ddc19` (`Initial Smartiflix website release`)
 Scope: project discovery and technical SEO baseline before remediation
 
 This document records the repository state observed before implementation work began. The working tree was initially clean: `git status --short --branch` returned only `## main...origin/main`. Parallel remediation began after the evidence capture, so later working-tree output is intentionally not treated as baseline evidence.

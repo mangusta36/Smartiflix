@@ -17,7 +17,10 @@
     "qa:blog:duplicates": "tsx scripts/verify-blog-duplicates.mjs",
     "verify:blog-seo": "tsx scripts/verify-blog-seo.mjs",
     "verify:image-alt": "tsx scripts/verify-image-alt.mjs",
-    "verify:production": "tsx scripts/verify-site-production.mjs"
+    "verify:production": "tsx scripts/verify-site-production.mjs",
+    "verify:domain": "npm run build && tsx scripts/verify-canonical-domain.mjs",
+    "typecheck": "tsc --noEmit",
+    "verify:seo": "npm run typecheck && npm run lint && npm run build && npm run qa:links && npm run verify:blog-seo && npm run verify:image-alt && npm run verify:production"
   },
   "keywords": [],
   "author": "",

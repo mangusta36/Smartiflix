@@ -1,9 +1,9 @@
 import { chromium } from "playwright";
 import { blogArticles } from "../src/data/blog.ts";
 import { openProductionServer } from "./production-server.mjs";
+import { CANONICAL_ORIGIN } from "../src/lib/site.ts";
 
-const expectedOrigin = process.env.NEXT_PUBLIC_SITE_ORIGIN?.replace(/\/$/, "");
-if (!expectedOrigin) throw new Error("NEXT_PUBLIC_SITE_ORIGIN is required for canonical verification");
+const expectedOrigin = CANONICAL_ORIGIN;
 
 const allowedBrandAnchors = new Set(["Smartiflix", "Smartiflix IPTV"]);
 const articleRoutes = new Set(blogArticles.map((article) => `/blog/${article.slug}`));
